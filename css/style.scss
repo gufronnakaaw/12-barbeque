@@ -1,0 +1,312 @@
+// font
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+
+// variable
+$white : white;
+$black : black;
+$orange : #ff5722;
+$orangeBold : #e94e0c;
+$fontShadowIntoLight : 'Shadows Into Light', cursive;
+$openSans : 'Open Sans', sans-serif;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+nav {
+    
+    // navbar
+    .navbar {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        left: 0;
+        right: 0;
+        position: fixed;
+        padding: 0 5%;
+
+
+        // burger menu
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 5;
+    
+            .bar1, .bar2, .bar3 {
+                width: 25px;
+                height: 3px;
+                background-color: $white;
+                margin: 5px 0;
+                border-radius: 3px;
+            }
+        }
+
+
+        // logo and h2
+        .navbrand {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 35px;
+                height: 35px;
+            }
+
+            h2 {
+                margin-left: 5px;
+                font-family: $fontShadowIntoLight;
+            }
+        }
+
+
+        // navitem left
+        .left {
+            a {
+                font-family: $openSans;
+                
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+
+        // navitem right
+        .right {
+            margin-left: auto;
+
+            a {
+                font-family: $openSans;
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+
+
+        // general
+        a {
+            text-decoration: none;
+            color: $white;
+            padding: 10px;
+        }
+    }
+    
+
+    // sidenav
+    .sidenav {
+        width: 270px;
+        position: fixed;
+        left: -275px;
+        overflow-x: hidden;
+        top: 0;
+        background-color: $black;
+        height: 100%;
+        transition: 0.3s;
+        z-index: 4;
+        
+        // list
+        li {
+            padding: 12px 25px;
+            
+            // last child
+            &:last-child {
+                
+                a {
+                    padding: 8px 16px;
+                    background-color: $orange;
+                    border-radius: 3px;
+
+                    &:hover {
+                        background-color: $orangeBold;
+                        color: $white;
+                    }
+                }
+            }
+            
+
+            // logo and h2
+            .navbrand {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                }
+
+                h2 {
+                    margin-left: 4px;
+                    font-family: $fontShadowIntoLight;
+                }
+
+                &:hover{
+                    color: $white;
+                }
+            }
+
+            // general
+            a {
+                text-decoration: none;
+                color: $white;
+                font-family: $openSans;
+
+                &:hover {
+                    color: $orange;
+                }
+            }
+            
+        }
+    }
+
+    // sidenav at show
+    .sidenav-show {
+        left: 0;
+    }
+}
+
+
+// navbar at scrolled
+.navbar-scrolled {
+    background-color: $black;
+    transition: 0.2s;
+}
+
+
+// overlay
+#overlay {
+    position: fixed; 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+    background-color: rgba(0,0,0,0.5); 
+    z-index: 3; 
+}
+
+.overlay-show{
+    display: block !important;
+}
+
+
+// hero
+#hero {
+    background-image: url("../img/steak2-min.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    
+    .text {
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: 100%;
+        color: $white;
+        
+        h1 {
+            font-size: 3em;
+            font-family: $fontShadowIntoLight;
+        }
+
+        p {
+            font-size: 1.5em;
+            font-family: $openSans;
+        }
+    }
+}
+
+
+@media (min-width: 1024px){
+    nav {
+        .sidenav {
+            left: -275px;
+        }
+
+    }
+    
+    
+    #overlay {
+        display: none !important;
+    }
+
+
+    #hero{
+        background-attachment: fixed;
+    }
+
+}
+
+// on tablet
+@media (max-width: 768px){ 
+    nav {
+        .navbar {
+            left: 0;
+            right: 0;
+
+            .burger {
+                display: inline-block;
+            }
+
+            .navbrand {
+                margin: auto;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+
+                h2 {
+                    display: none;
+                }
+            }
+
+            .left {
+                display: none;
+            }
+
+            .right {
+                display: none;
+            }
+        }
+    }
+
+    #hero {
+
+        .text {
+            
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+// on smartphone
+@media (max-width: 480px){ 
+    #hero {
+
+        .text {
+            
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+        }
+    }
+}

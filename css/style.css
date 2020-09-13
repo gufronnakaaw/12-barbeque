@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+nav .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  left: 0;
+  right: 0;
+  position: fixed;
+  padding: 0 5%;
+}
+
+nav .navbar .burger {
+  display: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+nav .navbar .burger .bar1, nav .navbar .burger .bar2, nav .navbar .burger .bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 3px;
+}
+
+nav .navbar .navbrand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .navbar .navbrand img {
+  width: 35px;
+  height: 35px;
+}
+
+nav .navbar .navbrand h2 {
+  margin-left: 5px;
+  font-family: "Shadows Into Light", cursive;
+}
+
+nav .navbar .left a {
+  font-family: "Open Sans", sans-serif;
+}
+
+nav .navbar .left a:hover {
+  color: #ff5722;
+}
+
+nav .navbar .right {
+  margin-left: auto;
+}
+
+nav .navbar .right a {
+  font-family: "Open Sans", sans-serif;
+}
+
+nav .navbar .right a:hover {
+  color: #ff5722;
+}
+
+nav .navbar a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+nav .sidenav {
+  width: 270px;
+  position: fixed;
+  left: -275px;
+  overflow-x: hidden;
+  top: 0;
+  background-color: black;
+  height: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 4;
+}
+
+nav .sidenav li {
+  padding: 12px 25px;
+}
+
+nav .sidenav li:last-child a {
+  padding: 8px 16px;
+  background-color: #ff5722;
+  border-radius: 3px;
+}
+
+nav .sidenav li:last-child a:hover {
+  background-color: #e94e0c;
+  color: white;
+}
+
+nav .sidenav li .navbrand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .sidenav li .navbrand img {
+  width: 35px;
+  height: 35px;
+}
+
+nav .sidenav li .navbrand h2 {
+  margin-left: 4px;
+  font-family: "Shadows Into Light", cursive;
+}
+
+nav .sidenav li .navbrand:hover {
+  color: white;
+}
+
+nav .sidenav li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+nav .sidenav li a:hover {
+  color: #ff5722;
+}
+
+nav .sidenav-show {
+  left: 0;
+}
+
+.navbar-scrolled {
+  background-color: black;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.overlay-show {
+  display: block !important;
+}
+
+#hero {
+  background-image: url("../img/steak2-min.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+}
+
+#hero .text {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  color: white;
+}
+
+#hero .text h1 {
+  font-size: 3em;
+  font-family: "Shadows Into Light", cursive;
+}
+
+#hero .text p {
+  font-size: 1.5em;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media (min-width: 1024px) {
+  nav .sidenav {
+    left: -275px;
+  }
+  #overlay {
+    display: none !important;
+  }
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  nav .navbar {
+    left: 0;
+    right: 0;
+  }
+  nav .navbar .burger {
+    display: inline-block;
+  }
+  nav .navbar .navbrand {
+    margin: auto;
+  }
+  nav .navbar .navbrand img {
+    width: 40px;
+    height: 40px;
+  }
+  nav .navbar .navbrand h2 {
+    display: none;
+  }
+  nav .navbar .left {
+    display: none;
+  }
+  nav .navbar .right {
+    display: none;
+  }
+  #hero .text h1 {
+    font-size: 2.5em;
+  }
+  #hero .text p {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero .text h1 {
+    font-size: 2em;
+  }
+  #hero .text p {
+    font-size: 0.9em;
+  }
+}
+/*# sourceMappingURL=style.css.map */
